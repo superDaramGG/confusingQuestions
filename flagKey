@@ -1,0 +1,20 @@
+//공통으로 setState로 받아오기 
+//flag값을 보여주게 한다.
+
+this.state = {
+  flagFirst: false, 
+  flagSecond: false,
+  flagThird: false,
+};
+
+this.showFlags = this.showFlags.bind(this);
+
+showFlags = flagKey => () => {
+  this.setState({
+    [flagKey]: !this.state[flagKey]
+  });  
+}
+
+<span onClick={this.showFlag('flagFirst')}></span>
+<span onClick={this.showFlag('flagSecond')}></span>
+<span onClick={this.showFlag('flagThird')}></span>
